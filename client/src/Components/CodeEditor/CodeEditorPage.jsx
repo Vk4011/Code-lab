@@ -2,19 +2,29 @@ import QuestionsNav from "./QuestionsNav";
 import QuestionText from "./QuestionText";
 import OutputArea from "./OutputArea";
 import Editor from "@monaco-editor/react";
+import axios from 'axios'
 import Button from "react-bootstrap/Button";
 const CodeEditorPage = () => {
-  const [code, setCode] = useState('hi')
-  const editorRef = useRef();
-  const getCodeString = () => {
-
-      // const codeString = editorRef.current.value;
-      console.log(code); // Output the code string
-   
-  };
-  const codeChange = (e)=>{
-    setCode(e.target.value)
+  const [output, setOutput] = useState('')
+  const [code, setCode] = useState('')
+  const editorRef = useRef(null);
+  const submitCode = async ()=>{
+    console.log(code)
+    const response = await axios.post('https://gatecodelab.onrender.com/question/submitques',{code})
+    console.log(response)
+    setOutput(response.data.stdout)
   }
+  function handleEditorDidMount(editor, monaco) {
+    editorRef.current = editor;
+  }
+
+  function showValue() {
+    // this is where you can get source code from editor
+    console.log(editorRef.current.getValue());
+    setCode(editorRef.current.getValue());
+  }
+
+
   const {name, testcase} = useParams()
   return (
     <>
@@ -22,20 +32,21 @@ const CodeEditorPage = () => {
       <QuestionText name={name}/>
       <Editor
       ref={editorRef}
-        onChange={codeChange}
+      onMount={handleEditorDidMount}
+      onChange={showValue}
         height="50vh"
         width="100%"
-        value={code}
+        
         theme="vs-dark"
         defaultLanguage="python"
       />
       <p style={{margin:'1rem'}}>testcase : {testcase}</p>
-      <OutputArea />
+      <OutputArea output={output}/>
 
       <div className="foot">
         <div className="foot-container">
-          <span variant="outline-warning" className="b"  onClick={getCodeString}>Run</span>{" "}
-          <span variant="outline-success"  className="b" >Submit</span>{" "}
+          <span variant="outline-warning" className="b" >Run</span>{" "}
+          <span variant="outline-success"  className="b" onClick={submitCode}>Submit</span>{" "}
         </div>
       </div>
     </>
