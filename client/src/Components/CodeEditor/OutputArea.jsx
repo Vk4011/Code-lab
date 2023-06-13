@@ -7,7 +7,7 @@ function OutputArea({output}) {
 
         OUTPUT: <p style={
           {
-            color:'green',
+            color:'#0cf60c',
             
           }
         }>{output}</p>
