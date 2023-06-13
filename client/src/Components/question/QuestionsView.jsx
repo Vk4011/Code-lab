@@ -8,7 +8,7 @@ const QuestionsView = () => {
         no:'1',
       question:
         "Write a Python function to find the maximum number in a given list.",
-      testcase: "max_number [3, 9, 1, 6, 2]",
+      testcase: "[3, 9, 1, 6, 2]",
     },
     {
         no:'2',
@@ -37,7 +37,7 @@ const QuestionsView = () => {
         no:'6',
       question:
         "Write a Python program to find the sum of all even numbers in a given list.",
-      testcase: "sum_even [1, 2, 3, 4, 5, 6] ",
+      testcase: "[1, 2, 3, 4, 5, 6] ",
     },
     {
         no:'7',
@@ -48,7 +48,7 @@ const QuestionsView = () => {
         no:'8',
       question:
         "Write a Python program to remove duplicate elements from a given list.",
-      testcase: "remove_duplicates [1, 2, 2, 3, 4, 4, 5]",
+      testcase: " [1, 2, 2, 3, 4, 4, 5]",
     },
     {
         no:'9',
