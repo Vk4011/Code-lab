@@ -1,11 +1,16 @@
 import Card from "react-bootstrap/Card";
 
-function OutputArea() {
+function OutputArea({output}) {
   return (
     <Card bg='dark' className="m-3" text="light">
         <Card.Body>
 
-        OUTPUT
+        OUTPUT: <p style={
+          {
+            color:'green',
+            
+          }
+        }>{output}</p>
         </Card.Body>
     </Card>
   );
