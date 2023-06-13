@@ -24,9 +24,9 @@ function Header() {
         <div className="content">
           <div className="start">
           <h1>Conquer coding assignments with confidence.</h1>
-            <a class="start-coding-button" href="/auth/signup">
+            <Link class="start-coding-button" to="/auth/signup">
               Start Coding
-            </a>
+            </Link>
           </div>
         <img src={i} className="i" alt="" />
         </div>
