@@ -12,7 +12,7 @@ function Question({ ques }) {
             </td>
             <td>{ques.question}</td>
             <td>
-              C and DS
+              Python
               <button onClick={() => navigate(`/code_editor/${ques.question}/${ques.testcase}`)}>
                 {""}
                 Open Ques{" "}
