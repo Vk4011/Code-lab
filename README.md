@@ -1,4 +1,5 @@
-![image](https://github.com/sharmas07/CodeLab/assets/82169761/68268d6f-f40c-4a52-a8b2-48ea8476d01f)
+![image](https://github.com/Vk4011/Code-lab/assets/97166893/335f6138-525a-450d-9665-854204f03cc4)
+
 #
 ![image](https://github.com/sharmas07/CodeLab/assets/82169761/2f9426af-0112-4654-970c-2ea5d0e66563)
 #
@@ -8,7 +9,7 @@
 
 
 
-Clone the project
+Clone the project!
 
 ```bash
   https://github.com/sharmas07/CodeLab.git
