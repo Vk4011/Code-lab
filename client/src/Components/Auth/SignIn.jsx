@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import "../Styles/SignIn.css"
+import "../Styles/SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
-function SignIn() {
+import i from "../../images/sign.jpg"
+import loader from "../../images/loader.gif"
+import { base_url } from "../../api";
+function SignIn({setUserId}) {
+  const [loading, setLoading] = useState(false)
+  const [AuthError, setAuthError] = useState(false)
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,29 +20,35 @@ function SignIn() {
   }
 
   const handleLogin = async (e) => {
+    setLoading(true)
     e.preventDefault();
-    const data = {
-      email,
-      password,
-    };
     console.log("handleLogin");
-    console.log(data);
-
-    const response = await axios.post(
-      "https://gatecodelab.onrender.com/auth/signin",
-      {email, password}
-    );
-    console.log(response)
-    navigate('/allquestions')
+    try {
+      const response = await axios.post(
+        `${base_url}/auth/signin`,
+        {email, password}
+      );
+      console.log(response)
+      localStorage.setItem('userId',response.data.user._id)
+      localStorage.setItem('auth-token',response.data.auth_token)
+      // setUserId(response.data.user._id)
+      navigate('/allquestions')
+      setLoading(false)  
+    } catch (error) {
+      setAuthError(true)
+      console.log(error)
+      setLoading(false)
+    }
   };
 
   return (
     <>
-      <div className="center">
-        <div className="containe">
+      <div className="page">
+        <div className="card_container">
           <h2>Sign in</h2>
           <form>
-            <div className="sign">
+            <div className="signup_container">
+              <div>
               <label htmlFor="email" className="email">
                 Email:{" "}
               </label>
@@ -50,24 +60,27 @@ function SignIn() {
                 onChange={handleChangeEmail}
                 required
               />
-              <br />
-              <br />
-              <label htmlFor="password" className="pass">
+              </div>
+             
+             <div>
+             <label htmlFor="password" className="pass">
                 Password:{" "}
               </label>
               <input type="password" id="password" name="password" value={password} 
               onChange={handleChangePassword}
               required />
-              <br />
-              <br />
+             </div>
+             
             </div>
+            {AuthError && <p style={{color:'red', textAlign:'center'}}>something went wrong!</p>}
             <p>
               {" "}
-              Create account? <Link to="/auth/signup">Sign Up</Link>
+              Don't have an account ? <Link to="/auth/signup">Sign Up</Link>
             </p>
-            <span onClick={handleLogin} className="btnElement"  >Login</span>
+            <button onClick={handleLogin} className={`btnElement_${loading?"loading":""}`}>{loading?<img style={{width:'50px'}} src={loader} alt="" />:"Login"}</button>
           </form>
         </div>
+        <img src={i} className="i" alt="" />
       </div>
     </>
   );

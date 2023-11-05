@@ -1,0 +1,91 @@
+.header {
+   background-image: linear-gradient(
+    45deg,
+    rgb(136, 231, 166),
+    rgb(29, 236, 108),
+    rgb(116, 211, 138)
+  );
+  
+  /* background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/3962.png);
+   */
+   /* background-color: rgb(29, 236, 122); */
+  background-size: cover;
+  background-repeat:no-repeat;
+
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 900;
+  border: none;
+}
+header{
+    width: 100vw;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+}
+.logo {
+  font-weight: bold;
+  width: 320px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    position: fixed;
+    z-index: 1;
+    margin: 0;
+    color: greenyellow;
+    right: 0;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    max-width: 70%;
+    width: 70%;
+   
+}
+.sidebar-show{
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.sidebar-hide{
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger__btn{
+    width: 2rem;
+    display: none;
+}
+@media (max-width: 473px) {
+  .logo {
+    font-weight: bold;
+    width: 180px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  .header{
+    padding: 0;
+  }
+  .hamburger__btn{
+    width: 2rem;
+    display: block;
+    }
+}
+

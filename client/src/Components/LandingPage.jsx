@@ -1,34 +1,23 @@
 import React from "react";
 import "./Styles/LandingPage.css";
 import { Link } from "react-router-dom";
-import g from "../images/G.png";
-import i from "../images/pg.png";
+import home_image from "../images/si.avif";
+
 function Header() {
   return (
     <>
-      <header>
-        <div class="logo">
-          <img src={g} class="logo" alt="" />
-        </div>
-        <div class="nav-links">
-          <a href="#" className="home">
-            Home
-          </a>
-          <Link to="/auth/signup" className="Login">
-            Login
-          </Link>
-        </div>
-      </header>
 
       <div className="home-content">
         <div className="content">
           <div className="start">
-          <h1>Conquer coding assignments with confidence.</h1>
-            <Link class="start-coding-button" to="/auth/signup">
+            <p className="home__txt">Conquer coding assignments with confidence.</p>
+          
+            <Link className="start-coding-button" style={{textDecoration:"none"}}  to="/auth/signup">
               Start Coding
             </Link>
           </div>
-        <img src={i} className="i" alt="" />
+         
+        <img src={home_image} className="image" alt="" />
         </div>
       </div>
     </>

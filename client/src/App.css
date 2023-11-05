@@ -1,36 +1,22 @@
-
-
-
-
-
-
-body{
-    height: 100vh;
-    background: linear-gradient(45deg,black,rgb(30, 27, 27),rgb(60, 52, 52),rgb(82, 79, 79),);
-    animation: color 12s ease-in-out infinite;
+@keyframes color {
+  0% {
+    background-position: 0 50%;
   }
-  
-  
-  @keyframes color{
-    0%{
-      background-position: 0 50% ;
-    }
-    50%{
-      background-position: 100% 50% ;
-    }
-    100%{
-      background-position: 0 50% ;
-    }
+  50% {
+    background-position: 100% 50%;
   }
-
-
-  .foot-container{
-    display: flex;
-    justify-content: flex-end;
-    margin: 1rem;
+  100% {
+    background-position: 0 50%;
   }
+}
 
-.b{
+.foot-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+}
+
+.b {
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -41,15 +27,63 @@ body{
   color: rgb(73, 244, 21);
   height: 40px;
   margin-top: 25px;
-  border-radius: 5px ;
-  box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246);
-  font-family: BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(33, 107, 235), 0 0 10px rgb(27, 81, 246);
+  font-family: BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-weight: 900;
   margin-left: 40px;
 }
-.b:hover{
-  background-color: aliceblue;
-  color: rgb(17, 16, 16);
-  box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246),
-  0 0 15px rgb(33, 107, 235),0 0 25px rgb(27, 81, 246);
+.b:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px rgb(33, 107, 235), 0 0 10px rgb(27, 81, 246),
+    0 0 15px rgb(33, 107, 235), 0 0 25px rgb(27, 81, 246);
+}
+
+.SidebarObject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: auto;
+  gap: 80px;
+}
+
+.close {
+  border: 2px solid rgb(24, 24, 26);
+  border-radius: 8px;
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-weight: bold;
+  background-color: transparent;
+  color: rgb(14, 245, 22);
+  box-shadow: 0 0 5px rgb(99, 243, 16), 0 0 10px rgb(67, 246, 8);
+}
+
+.close:hover {
+  box-shadow: 0 0 5px rgb(99, 243, 16), 0 0 10px rgb(67, 246, 8),
+    0 0 25px rgb(75, 249, 27), 0 0 50px rgb(37, 248, 18);
+}
+
+.home {
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 35px 0;
+}
+
+.home:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }

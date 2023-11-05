@@ -1,132 +1,132 @@
-header {
-  background-image: linear-gradient(to right, black, black, black);
-  padding: 20px;
-  display: flex;
-  border-radius: 5px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 900;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  width: 40px;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav-links a {
-  margin-left: 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  font-weight: 900;
-}
-
 .home {
-  padding: 10px;
-  font-size: 1rem;
-  background-color: #549bf2;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 35px 0;
+
 }
 .Login {
-  padding: 10px;
-  font-size: 18px;
-  background-color: #4f9aeb;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 35px 0;
 }
 
-.home:hover {
-  background-color: #333;
-  box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 50px blue, 0 0 100px blue;
-  color: white;
-}
 
-.Login:hover {
-  background-color: #333;
-  box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 50px blue, 0 0 100px blue;
-  color: white;
+
+.Login:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }
 
 .start-coding-button {
-  margin-top: 50px;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #FAFAFA;
+  text-transform: uppercase;
   padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgb(0, 89, 255), 0 0 10px rgb(0, 89, 255);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 35px 0;
 }
-
+.start-coding-button:active{
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+/* 
 .start-coding-button:hover {
   background-color: #333;
-  box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 25px blue;
+  box-shadow: 0 0 5px rgb(128, 162, 229), 0 0 10px rgb(127, 127, 238),
+    0 0 25px rgb(123, 123, 220), 0 0 50px rgb(109, 156, 252);
+} */
+.image {
+  width: 39rem;
 }
-
-.i {
-  width: 700px;
-}
-
 .start {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 2.5rem;
 }
+.home__txt {
+  font-size: 3.5rem;
+  font-weight: bolder;
+}
 
 .home-content {
+  height: 80vh;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
+  /* background-image: linear-gradient(
+    45deg,
+    rgba(231, 231, 231, 0.632),
+    rgb(197, 238, 249),
+    #1056e3
+  ); */
+  /* background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/3957.png); */
+  background-image: linear-gradient(90deg,rgb(201, 235, 199),rgb(255, 255, 255),white,white);
+  background-size: cover;
+  background-repeat:no-repeat;
 }
 .content {
-  width: 100%;
   display: flex;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
+  font-weight: 900;
+}
+@media screen and (max-width: 714px) {
+  .image {
+    width: 254px;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .home__txt {
+    font-size: 2.3rem;
+  }
   .content {
     justify-content: space-evenly;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
-
-  .i {
+  .home-content{
+    height: 83vh;
+  }
+  .image {
     width: 300px;
   }
   .start {
     align-items: center;
     text-align: center;
     margin-left: 0;
+  }
+  .start > p {
+    font-size: 2.4rem;
+  }
+  .start-coding-button {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
   }
 }
