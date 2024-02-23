@@ -1,7 +1,7 @@
 import React from "react";
 import "./Styles/LandingPage.css";
 import { Link } from "react-router-dom";
-import home_image from "../images/si.avif";
+import home_image from "../images/si.png";
 
 function Header() {
   return (

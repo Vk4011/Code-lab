@@ -134,7 +134,8 @@ const CodeEditorPage = () => {
       />
       <h4
         style={{
-          fontWeight: "bold",
+          fontWeight: "900",
+          fontSize: "2rem",
           height: "2rem",
           margin: "1rem",
           color: `${status_id === 4 ? "red" : "green"}`,

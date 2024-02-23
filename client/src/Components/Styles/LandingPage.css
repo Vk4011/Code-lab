@@ -57,7 +57,7 @@
     0 0 25px rgb(123, 123, 220), 0 0 50px rgb(109, 156, 252);
 } */
 .image {
-  width: 39rem;
+  width: 50rem;
 }
 .start {
   display: flex;
@@ -99,6 +99,7 @@
 @media screen and (max-width: 714px) {
   .image {
     width: 254px;
+        margin-bottom: 50px;
   }
 }
 
@@ -122,7 +123,8 @@
     margin-left: 0;
   }
   .start > p {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+    margin-top: 50px;
   }
   .start-coding-button {
     margin-top: 50px;
